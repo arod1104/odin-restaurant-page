@@ -1,0 +1,16 @@
+{
+  "name": "odin-restaurant-page",
+  "version": "1.0.0",
+  "description": "This is the Restaurant Page project as part of The Odin Project JavaScript Course written in HTML, CSS, and JS utilizing webpack.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.97.1",
+    "webpack-cli": "^5.1.4"
+  }
+}
