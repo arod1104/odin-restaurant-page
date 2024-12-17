@@ -1,11 +1,13 @@
 import "./styles.css";
 import restaurantFront from "./imgs/las-pinatas-restaurant-front-side.jpg";
 
-document.addEventListener("DOMContentLoaded", () => {
+document.getElementById("home").addEventListener("click", () => {
   const homeButton = document.getElementById("home");
   if (homeButton) {
     homeButton.classList.add("active");
   }
+  const content = document.getElementById("content");
+  content.innerHTML = "";
   renderHome();
 });
 
@@ -68,3 +70,6 @@ function renderHome() {
 }
 
 function renderMenu() {}
+
+// renderHome();
+renderMenu();
