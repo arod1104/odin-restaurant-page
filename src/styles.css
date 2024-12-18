@@ -6,6 +6,7 @@
 
 body {
   background-color: #f2f2f2;
+  font-family: sans-serif;
 }
 
 header {
@@ -70,20 +71,24 @@ header button:active {
   /* margin-bottom: 1.5rem; */
 }
 
-.menu-section {
-  margin-top: 3rem;
+section {
+  margin-top: 2rem;
+}
+
+.section-header {
   border-bottom: 2px solid rgba(0, 0, 0, 1);
   display: flex;
   flex-direction: column;
   gap: 4px;
+  padding-bottom: 4px;
 }
 
-.menu-section > p:first-of-type {
+.section-header > p:first-of-type {
   font-size: 2rem;
   font-weight: bold;
 }
 
-.section-description {
+.section-info {
   color: rgba(0, 0, 0, 0.8);
   margin-bottom: 4px;
   font-style: italic;
@@ -97,12 +102,19 @@ header button:active {
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }
 
-.dish {
+.dish,
+.price {
   font-size: 20px;
 }
 
-.dish-description {
+.dish-info {
   font-size: 16px;
   color: rgba(0, 0, 0, 0.8);
   font-style: italic;
+}
+
+.item-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
