@@ -94,7 +94,7 @@ section {
   font-style: italic;
 }
 
-.menu-item {
+.section-item {
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -113,7 +113,7 @@ section {
   font-style: italic;
 }
 
-.item-price {
+.dish-price-box {
   display: flex;
   justify-content: space-between;
   align-items: center;
