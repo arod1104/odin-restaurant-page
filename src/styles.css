@@ -65,6 +65,11 @@ header button:active {
   font-size: 1.5rem;
 }
 
+/* Menu Tab */
+.menu {
+  width: 1000px;
+}
+
 .menu .menu-title {
   font-size: 3rem;
   font-weight: bold;
@@ -72,7 +77,7 @@ header button:active {
 }
 
 section {
-  margin-top: 2rem;
+  margin-top: 2.5rem;
 }
 
 .section-header {
@@ -99,21 +104,28 @@ section {
   flex-direction: column;
   gap: 8px;
   padding: 12px 0px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid #000;
+}
+
+.section-item:last-of-type {
+  border-bottom: none;
 }
 
 .dish,
+.beverage,
 .price {
   font-size: 20px;
 }
 
-.dish-info {
+.dish-info,
+.beverage-info {
   font-size: 16px;
-  color: rgba(0, 0, 0, 0.8);
+  color: #444;
   font-style: italic;
 }
 
-.dish-price-box {
+.dish-price-box,
+.beverage-price-box {
   display: flex;
   justify-content: space-between;
   align-items: center;
