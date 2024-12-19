@@ -11,7 +11,7 @@ body {
 
 header {
   background-color: #0265cb;
-  outline: 2px solid red;
+  border-bottom: 4px solid red;
   padding: 1rem 5rem;
   display: flex;
   justify-content: space-between;
@@ -113,12 +113,14 @@ section {
 
 .dish,
 .beverage,
-.price {
+.price,
+.beverage-size {
   font-size: 20px;
 }
 
 .dish-info,
-.beverage-info {
+.beverage-info,
+.beverage-size {
   font-size: 16px;
   color: #444;
   font-style: italic;
@@ -129,4 +131,17 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.prices {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.price-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
 }
