@@ -81,6 +81,7 @@ function renderMenu() {
   renderMenuSuggestions(menuDiv);
   renderBeverages(menuDiv);
   renderBeer(menuDiv);
+  renderWines(menuDiv);
 
   content.appendChild(menuDiv);
 }
@@ -562,6 +563,93 @@ function renderBeer(menuDiv) {
     beveragePriceBox.appendChild(beveragePrice);
     sectionItem.appendChild(beveragePriceBox);
 
+    section.appendChild(sectionItem);
+  });
+
+  // Append the section to the given menuDiv
+  menuDiv.appendChild(section);
+}
+
+function renderWines(menuDiv) {
+  // Create the main section element
+  const section = document.createElement("section");
+
+  // Create the header div and its content
+  const sectionHeader = document.createElement("div");
+  sectionHeader.className = "section-header";
+
+  const sectionTitle = document.createElement("p");
+  sectionTitle.className = "section-title";
+  sectionTitle.textContent = "Wines";
+
+  sectionHeader.appendChild(sectionTitle);
+  section.appendChild(sectionHeader);
+
+  // Define the wines data
+  const wines = [
+    { name: "By The Glass", price: "$4.95" },
+    { name: "1/2 Carafe", price: "$9.95" },
+    { name: "Full Carafe", price: "$16.95" },
+    { name: "Strawberry Pina Colada", price: "$8.25" },
+    { name: "Pina Colada", price: "$7.95" },
+    {
+      name: "Strawberry Margarita",
+      sizes: [
+        { size: "L", price: "$8.95" },
+        { size: "S", price: "$6.95" },
+      ],
+    },
+    { name: "Call Drinks", price: "$5.95" },
+    { name: "Bar Drinks", price: "$5.25" },
+  ];
+
+  // Loop through the wines array and create section-item divs
+  wines.forEach(({ name, price, sizes }) => {
+    const sectionItem = document.createElement("div");
+    sectionItem.className = "section-item";
+
+    const beveragePriceBox = document.createElement("div");
+    beveragePriceBox.className = "beverage-price-box";
+
+    const beverageName = document.createElement("p");
+    beverageName.className = "beverage";
+    beverageName.textContent = name;
+
+    beveragePriceBox.appendChild(beverageName);
+
+    if (sizes) {
+      // If there are sizes, create the size and price structure
+      const pricesDiv = document.createElement("div");
+      pricesDiv.className = "prices";
+
+      sizes.forEach(({ size, price }) => {
+        const priceLabel = document.createElement("div");
+        priceLabel.className = "price-label";
+
+        const beverageSize = document.createElement("p");
+        beverageSize.className = "beverage-size";
+        beverageSize.textContent = size;
+
+        const beveragePrice = document.createElement("p");
+        beveragePrice.className = "price";
+        beveragePrice.textContent = price;
+
+        priceLabel.appendChild(beverageSize);
+        priceLabel.appendChild(beveragePrice);
+        pricesDiv.appendChild(priceLabel);
+      });
+
+      beveragePriceBox.appendChild(pricesDiv);
+    } else {
+      // Otherwise, just add the single price
+      const beveragePrice = document.createElement("p");
+      beveragePrice.className = "price";
+      beveragePrice.textContent = price;
+
+      beveragePriceBox.appendChild(beveragePrice);
+    }
+
+    sectionItem.appendChild(beveragePriceBox);
     section.appendChild(sectionItem);
   });
 
