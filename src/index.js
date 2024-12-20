@@ -79,6 +79,8 @@ function renderMenu() {
   renderMenuCombinations(menuDiv);
   renderMenuMexicanSelections(menuDiv);
   renderMenuSuggestions(menuDiv);
+  renderBeverages(menuDiv);
+  renderBeer(menuDiv);
 
   content.appendChild(menuDiv);
 }
@@ -451,6 +453,115 @@ function renderMenuSuggestions(menuDiv) {
 
     sectionItem.appendChild(dishPriceBox);
     sectionItem.appendChild(dishInfo);
+    section.appendChild(sectionItem);
+  });
+
+  // Append the section to the given menuDiv
+  menuDiv.appendChild(section);
+}
+
+function renderBeverages(menuDiv) {
+  // Create the main section element
+  const section = document.createElement("section");
+
+  // Create the header div and its content
+  const sectionHeader = document.createElement("div");
+  sectionHeader.className = "section-header";
+
+  const sectionTitle = document.createElement("p");
+  sectionTitle.className = "section-title";
+  sectionTitle.textContent = "Beverages";
+
+  sectionHeader.appendChild(sectionTitle);
+  section.appendChild(sectionHeader);
+
+  // Define the beverages data
+  const beverages = [
+    { name: "Mexican Coffee", price: "$2.25", info: "With cinnamon" },
+    { name: "Hot Tea", price: "$2.25", info: "" },
+    { name: "Iced Tea", price: "$2.75", info: "" },
+    { name: "Milk", price: "$2.75", info: "" },
+    { name: "Hot Mexican Chocolate", price: "$3.95", info: "" },
+    { name: "Orange Tea", price: "$2.75", info: "" },
+    { name: "Soft Drinks", price: "$2.75", info: "" },
+  ];
+
+  // Loop through the beverages array and create section-item divs
+  beverages.forEach(({ name, price, info }) => {
+    const sectionItem = document.createElement("div");
+    sectionItem.className = "section-item";
+
+    const beveragePriceBox = document.createElement("div");
+    beveragePriceBox.className = "beverage-price-box";
+
+    const beverageName = document.createElement("p");
+    beverageName.className = "beverage";
+    beverageName.textContent = name;
+
+    const beveragePrice = document.createElement("p");
+    beveragePrice.className = "price";
+    beveragePrice.textContent = price;
+
+    beveragePriceBox.appendChild(beverageName);
+    beveragePriceBox.appendChild(beveragePrice);
+
+    sectionItem.appendChild(beveragePriceBox);
+
+    if (info) {
+      const beverageInfo = document.createElement("p");
+      beverageInfo.className = "beverage-info";
+      beverageInfo.textContent = info;
+      sectionItem.appendChild(beverageInfo);
+    }
+
+    section.appendChild(sectionItem);
+  });
+
+  // Append the section to the given menuDiv
+  menuDiv.appendChild(section);
+}
+
+function renderBeer(menuDiv) {
+  // Create the main section element
+  const section = document.createElement("section");
+
+  // Create the header div and its content
+  const sectionHeader = document.createElement("div");
+  sectionHeader.className = "section-header";
+
+  const sectionTitle = document.createElement("p");
+  sectionTitle.className = "section-title";
+  sectionTitle.textContent = "Beer";
+
+  sectionHeader.appendChild(sectionTitle);
+  section.appendChild(sectionHeader);
+
+  // Define the beer data
+  const beers = [
+    { name: "Mexican", price: "$4.75" },
+    { name: "Domestic", price: "$4.25" },
+  ];
+
+  // Loop through the beer array and create section-item divs
+  beers.forEach(({ name, price }) => {
+    const sectionItem = document.createElement("div");
+    sectionItem.className = "section-item";
+
+    const beveragePriceBox = document.createElement("div");
+    beveragePriceBox.className = "beverage-price-box";
+
+    const beverageName = document.createElement("p");
+    beverageName.className = "beverage";
+    beverageName.textContent = name;
+
+    const beveragePrice = document.createElement("p");
+    beveragePrice.className = "price";
+    beveragePrice.textContent = price;
+
+    beveragePriceBox.appendChild(beverageName);
+    beveragePriceBox.appendChild(beveragePrice);
+    sectionItem.appendChild(beveragePriceBox);
+
     section.appendChild(sectionItem);
   });
 
