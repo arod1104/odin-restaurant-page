@@ -77,6 +77,7 @@ function renderMenu() {
   renderMenuAppetizers(menuDiv);
   renderMenuEggs(menuDiv);
   renderMenuCombinations(menuDiv);
+  renderMenuMexicanSelections(menuDiv);
 
   content.appendChild(menuDiv);
 }
@@ -251,6 +252,105 @@ function renderMenuCombinations(menuDiv) {
 
   // Loop through the combinations array and create section-item divs
   combinations.forEach(({ dish, info }) => {
+    const sectionItem = document.createElement("div");
+    sectionItem.className = "section-item";
+
+    const dishName = document.createElement("p");
+    dishName.className = "dish";
+    dishName.textContent = dish;
+
+    const dishInfo = document.createElement("p");
+    dishInfo.className = "dish-info";
+    dishInfo.textContent = info;
+
+    sectionItem.appendChild(dishName);
+    sectionItem.appendChild(dishInfo);
+    section.appendChild(sectionItem);
+  });
+
+  // Append the section to the given menuDiv
+  menuDiv.appendChild(section);
+}
+
+function renderMenuMexicanSelections(menuDiv) {
+  // Create the main section element
+  const section = document.createElement("section");
+
+  // Create the header div and its content
+  const sectionHeader = document.createElement("div");
+  sectionHeader.className = "section-header";
+
+  const sectionTitle = document.createElement("p");
+  sectionTitle.className = "section-title";
+  sectionTitle.textContent = "Mexican Selections";
+
+  const sectionInfo = document.createElement("p");
+  sectionInfo.className = "section-info";
+  sectionInfo.textContent =
+    "All Of These Dishes Are Served With Rice And Beans All May Be Served Vegetarian Style, First Serving Of Corn Chips And Hot Sauce Are Complementary Seconds $3.50 Extra";
+
+  sectionHeader.appendChild(sectionTitle);
+  sectionHeader.appendChild(sectionInfo);
+  section.appendChild(sectionHeader);
+
+  // Define the Mexican selections data
+  const mexicanSelections = [
+    {
+      dish: "Tacos",
+      info: "Three folded corn tortillas stuffed with your choice of beef, chicken or guacamole, topped with lettuce, tomato, onion, and aged anejo cheese",
+    },
+    {
+      dish: "Steak Tacos",
+      info: "Three folded corn tortillas filled with choice chunks of steak and topped with lettuce, tomato and anejo cheese",
+    },
+    {
+      dish: "Flautas",
+      info: "Crisp rolled tortillas stuffed with chicken or beef with a coating of guacamole and a dash of sour cream",
+    },
+    {
+      dish: "Tostadas",
+      info: "Crisp flat corn tortillas stuffed with chicken or beef with a coating of guacamole and a dash of sour cream",
+    },
+    {
+      dish: "Enchiladas Mole Sauce",
+      info: "Three soft corn tortillas dipped in mole sauce, filled with beef, chicken, and/or cheese topped with melted chihuahua cheese",
+    },
+    {
+      dish: "Enchiladas Nortenas",
+      info: "Three soft corn tortillas dipped in red hot sauce with choice of filling beef, chicken and/or cheese and melted cheese on top",
+    },
+    {
+      dish: "Suizas",
+      info: "Three soft corn tortillas dipped in mild tomato sauce with your choice of filling beef, chicken or cheese and melted cheese on top",
+    },
+    {
+      dish: "Enchiladas Mixtas",
+      info: "One of each of the above enchilada dishes with your choice of filling beef, chicken or cheese",
+    },
+    {
+      dish: "Enchiladas Verdes",
+      info: "Three soft corn tortillas dipped in green hot tomato and jalapeno sauce filled with your choice of beef, chicken, or cheese and melted chihuahua cheese on top",
+    },
+    {
+      dish: "Steak Taco Salad",
+      info: "Two cup shaped crispy flour tortillas filled with chunks of steak, lettuce, guacamole, cheese and sour cream",
+    },
+    {
+      dish: "Chimichangas",
+      info: "Soft fried flour tortillas with a spread of beans and filled with your choice of beef, chicken or cheese covered with a mild tomato sauce, melted cheese and guacamole on top and a dash of sour cream",
+    },
+    {
+      dish: "Burritos",
+      info: "Three grilled flour tortillas stuffed with your choice of beef, chicken or cheese",
+    },
+    {
+      dish: "Quesadillas",
+      info: "Grilled corn or flour tortilla, filled with melted chihuahua cheese",
+    },
+  ];
+
+  // Loop through the Mexican selections array and create section-item divs
+  mexicanSelections.forEach(({ dish, info }) => {
     const sectionItem = document.createElement("div");
     sectionItem.className = "section-item";
 
