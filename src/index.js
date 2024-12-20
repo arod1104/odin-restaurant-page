@@ -78,6 +78,7 @@ function renderMenu() {
   renderMenuEggs(menuDiv);
   renderMenuCombinations(menuDiv);
   renderMenuMexicanSelections(menuDiv);
+  renderMenuSuggestions(menuDiv);
 
   content.appendChild(menuDiv);
 }
@@ -363,6 +364,92 @@ function renderMenuMexicanSelections(menuDiv) {
     dishInfo.textContent = info;
 
     sectionItem.appendChild(dishName);
+    sectionItem.appendChild(dishInfo);
+    section.appendChild(sectionItem);
+  });
+
+  // Append the section to the given menuDiv
+  menuDiv.appendChild(section);
+}
+
+function renderMenuSuggestions(menuDiv) {
+  // Create the main section element
+  const section = document.createElement("section");
+
+  // Create the header div and its content
+  const sectionHeader = document.createElement("div");
+  sectionHeader.className = "section-header";
+
+  const sectionTitle = document.createElement("p");
+  sectionTitle.className = "section-title";
+  sectionTitle.textContent = "After Dinner Suggestions";
+
+  sectionHeader.appendChild(sectionTitle);
+  section.appendChild(sectionHeader);
+
+  // Define the after dinner suggestions data
+  const suggestions = [
+    {
+      dish: "Cuarenta Y Tres",
+      price: "$6.75",
+      info: "World famous spanish liqueur, served straight or on the rocks (forty three)",
+    },
+    {
+      dish: "Mexican Coffee",
+      price: "$7.95",
+      info: "Delightful combination of tequila kahlua and cinnamon coffee topped with whipped cream",
+    },
+    {
+      dish: "Mexican Stinger",
+      price: "$6.75",
+      info: "Tequila, orange liqueur and white creme de menthe",
+    },
+    {
+      dish: "Brave Bull",
+      price: "$6.75",
+      info: "Tequila and kahlua served on the rocks",
+    },
+    {
+      dish: "El Matador - The Bull Fighter",
+      price: "$6.75",
+      info: "Forty three and vodka served on the rocks",
+    },
+    {
+      dish: "Pinatas Coffee",
+      price: "$7.95",
+      info: "Cuarenta y tres, tequila and hot cinnamon coffee topped with whipped cream",
+    },
+    {
+      dish: "Spanish Fly",
+      price: "$6.75",
+      info: "Forty three and brandy served on the rocks",
+    },
+  ];
+
+  // Loop through the suggestions array and create section-item divs
+  suggestions.forEach(({ dish, price, info }) => {
+    const sectionItem = document.createElement("div");
+    sectionItem.className = "section-item";
+
+    const dishPriceBox = document.createElement("div");
+    dishPriceBox.className = "dish-price-box";
+
+    const dishName = document.createElement("p");
+    dishName.className = "dish";
+    dishName.textContent = dish;
+
+    const dishPrice = document.createElement("p");
+    dishPrice.className = "price";
+    dishPrice.textContent = price;
+
+    dishPriceBox.appendChild(dishName);
+    dishPriceBox.appendChild(dishPrice);
+
+    const dishInfo = document.createElement("p");
+    dishInfo.className = "dish-info";
+    dishInfo.textContent = info;
+
+    sectionItem.appendChild(dishPriceBox);
     sectionItem.appendChild(dishInfo);
     section.appendChild(sectionItem);
   });
