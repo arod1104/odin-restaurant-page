@@ -76,6 +76,7 @@ function renderMenu() {
 
   renderMenuAppetizers(menuDiv);
   renderMenuEggs(menuDiv);
+  renderMenuCombinations(menuDiv);
 
   content.appendChild(menuDiv);
 }
@@ -201,5 +202,75 @@ function renderMenuEggs(menuDiv) {
   menuDiv.appendChild(section);
 }
 
+function renderMenuCombinations(menuDiv) {
+  // Create the main section element
+  const section = document.createElement("section");
+
+  // Create the header div and its content
+  const sectionHeader = document.createElement("div");
+  sectionHeader.className = "section-header";
+
+  const sectionTitle = document.createElement("p");
+  sectionTitle.className = "section-title";
+  sectionTitle.textContent = "Combinations";
+
+  sectionHeader.appendChild(sectionTitle);
+  section.appendChild(sectionHeader);
+
+  // Define the combinations data
+  const combinations = [
+    {
+      dish: "No. 1",
+      info: "Beef flauta, cheese chile relleno, chicken burrito",
+    },
+    {
+      dish: "No. 2",
+      info: "Chorizo burrito, chicken taco, guacamole tostado",
+    },
+    {
+      dish: "No. 3",
+      info: "Cheese burrito, guacamole tostado, bean taco",
+    },
+    {
+      dish: "No. 4",
+      info: "Chicken tostada, cheese nortena, beef taco",
+    },
+    {
+      dish: "No. 5",
+      info: "Chorizo taco, chicken burrito, beef suiza",
+    },
+    {
+      dish: "No. 6",
+      info: "Cheese burrito, guacamole taco, cheese nortena",
+    },
+    {
+      dish: "No. 7",
+      info: "Chicken mole enchilada, quesadilla, chile relleno burrito",
+    },
+  ];
+
+  // Loop through the combinations array and create section-item divs
+  combinations.forEach(({ dish, info }) => {
+    const sectionItem = document.createElement("div");
+    sectionItem.className = "section-item";
+
+    const dishName = document.createElement("p");
+    dishName.className = "dish";
+    dishName.textContent = dish;
+
+    const dishInfo = document.createElement("p");
+    dishInfo.className = "dish-info";
+    dishInfo.textContent = info;
+
+    sectionItem.appendChild(dishName);
+    sectionItem.appendChild(dishInfo);
+    section.appendChild(sectionItem);
+  });
+
+  // Append the section to the given menuDiv
+  menuDiv.appendChild(section);
+}
+
+//  TODO: Change back to renderHome() when finished
 // renderHome();
 renderMenu();
