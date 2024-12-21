@@ -4,13 +4,18 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary-color: #0265cb;
+  --secondary-color: #fdfd36;
+}
+
 body {
   background-color: #f2f2f2;
   font-family: sans-serif;
 }
 
 header {
-  background-color: #0265cb;
+  background-color: var(--primary-color);
   border-bottom: 4px solid red;
   padding: 1rem 5rem;
   display: flex;
@@ -26,19 +31,29 @@ header {
 
 header nav {
   /* order: 3; */
-  border: 2px solid white;
-  background-color: white;
+  /* border: 2px solid white; */
+  /* background-color: white; */
 }
 
-header button {
+nav button {
   gap: 20px;
-  padding: 0rem 1rem;
-  background-color: white;
-  border: none;
+  padding: 0.5rem 1rem;
+  background-color: #ffffff;
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
+  color: #0265cb;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav button:hover {
+  background-color: var(--primary-color);
+  color: #ffffff;
 }
 
 header button:active {
-  background-color: #0265cb;
+  background-color: var(--primary-color);
 }
 
 #content {
